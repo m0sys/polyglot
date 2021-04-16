@@ -16,6 +16,8 @@
 
 > Clearly, I reject the view that there is one way that is right for everyone and for every problem. - Bjarne Stroustrup
 
+> Just because we shift paradigm, we should not forget all that we have learned. - Ivar Jacobson (OOSE)
+
 ## Author
 
 👤 **moe**
