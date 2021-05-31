@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mo/Desktop/Github/polyglot/c++/cherno-cpp/dev/Classes/src/log.cc
+iostream
+-
+
+/home/mo/Desktop/Github/polyglot/c++/cherno-cpp/dev/Classes/src/main.cc
+iostream
+-
+log.cc
+/home/mo/Desktop/Github/polyglot/c++/cherno-cpp/dev/Classes/src/log.cc
+
