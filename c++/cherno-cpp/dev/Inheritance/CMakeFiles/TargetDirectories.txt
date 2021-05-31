@@ -1,0 +1,3 @@
+/home/mo/Desktop/Github/polyglot/c++/cherno-cpp/dev/Inheritance/CMakeFiles/edit_cache.dir
+/home/mo/Desktop/Github/polyglot/c++/cherno-cpp/dev/Inheritance/CMakeFiles/rebuild_cache.dir
+/home/mo/Desktop/Github/polyglot/c++/cherno-cpp/dev/Inheritance/CMakeFiles/HelloInheritance.dir
