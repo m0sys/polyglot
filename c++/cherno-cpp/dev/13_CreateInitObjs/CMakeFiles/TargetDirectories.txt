@@ -1,0 +1,3 @@
+/home/mo/Desktop/Github/polyglot/c++/cherno-cpp/dev/13_CreateInitObjs/CMakeFiles/rebuild_cache.dir
+/home/mo/Desktop/Github/polyglot/c++/cherno-cpp/dev/13_CreateInitObjs/CMakeFiles/edit_cache.dir
+/home/mo/Desktop/Github/polyglot/c++/cherno-cpp/dev/13_CreateInitObjs/CMakeFiles/HelloCreateInitObjs.dir

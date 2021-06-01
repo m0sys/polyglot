@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mo/Desktop/Github/polyglot/c++/cherno-cpp/dev/13_CreateInitObjs/src/main.cc
+iostream
+-
+string
+-
+
