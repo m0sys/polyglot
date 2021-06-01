@@ -1,0 +1,3 @@
+/home/mo/Desktop/Github/polyglot/c++/cherno-cpp/dev/19_UsingLibs/CMakeFiles/rebuild_cache.dir
+/home/mo/Desktop/Github/polyglot/c++/cherno-cpp/dev/19_UsingLibs/CMakeFiles/edit_cache.dir
+/home/mo/Desktop/Github/polyglot/c++/cherno-cpp/dev/19_UsingLibs/CMakeFiles/HelloUsingLibs.dir
