@@ -1,0 +1,3 @@
+/home/mo/Desktop/Github/polyglot/c++/cherno-cpp/dev/24_Lambdas/CMakeFiles/rebuild_cache.dir
+/home/mo/Desktop/Github/polyglot/c++/cherno-cpp/dev/24_Lambdas/CMakeFiles/edit_cache.dir
+/home/mo/Desktop/Github/polyglot/c++/cherno-cpp/dev/24_Lambdas/CMakeFiles/HelloLambdas.dir
