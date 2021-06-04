@@ -1,3 +1,0 @@
-/home/mo/Desktop/Github/polyglot/c++/cherno-cpp/dev/09_Arrays/CMakeFiles/rebuild_cache.dir
-/home/mo/Desktop/Github/polyglot/c++/cherno-cpp/dev/09_Arrays/CMakeFiles/edit_cache.dir
-/home/mo/Desktop/Github/polyglot/c++/cherno-cpp/dev/09_Arrays/CMakeFiles/HelloArrays.dir

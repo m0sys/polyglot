@@ -1,1 +1,0 @@
-/usr/bin/c++  -Wall -Werror -std=c++14 -g CMakeFiles/HelloInitLists.dir/src/main.cc.o -o HelloInitLists 
