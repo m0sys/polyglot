@@ -22,6 +22,8 @@
 
 > A professional software developer masters more than just one programming language. - Bjarne Stroustrup (The C++ Programming Language [4th Edition])
 
+> To write a good program takes intelligence, taste, and patience. You are not going to get it right the first time. Experiment!  - Bjarne Stroustrup (The C++ Programming Language [4th Edition])
+
 ## Author
 
 👤 **Moe**
