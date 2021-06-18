@@ -20,9 +20,11 @@
 
 > When someone says I want a programming language in which I need only say what I wish done, give him a lollipop. - Alan Perlis (A Tour of C++)
 
+> A professional software developer masters more than just one programming language. - Bjarne Stroustrup (The C++ Programming Language [4th Edition])
+
 ## Author
 
-👤 **moe**
+👤 **Moe**
 
 * Github: [@mhd53](https://github.com/mhd53)
 
