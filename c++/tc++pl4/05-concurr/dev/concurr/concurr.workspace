@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeLite_Workspace Name="concurr">
+	<Project Name="concurr" Path="concurr.project" Active="No"/>
+	<BuildMatrix>
+		<WorkspaceConfiguration Name="Debug" Selected="yes">
+			<Project Name="concurr" ConfigName="Debug"/>
+		</WorkspaceConfiguration>
+	</BuildMatrix>
+</CodeLite_Workspace>
