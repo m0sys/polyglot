@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeLite_Workspace Name="src_files">
+	<Project Name="src_files" Path="src_files.project" Active="No"/>
+	<BuildMatrix>
+		<WorkspaceConfiguration Name="Debug" Selected="yes">
+			<Project Name="src_files" ConfigName="Debug"/>
+		</WorkspaceConfiguration>
+	</BuildMatrix>
+</CodeLite_Workspace>
