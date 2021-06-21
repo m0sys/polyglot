@@ -24,6 +24,8 @@
 
 > To write a good program takes intelligence, taste, and patience. You are not going to get it right the first time. Experiment!  - Bjarne Stroustrup (The C++ Programming Language [4th Edition])
 
+> In the fields in which I don't have to be an expert, I strongly prefer to be an average user. In that way, I minimize hassles. - Bjarne Stroustrup (TC++PL [4e])
+
 ## Author
 
 👤 **Moe**
