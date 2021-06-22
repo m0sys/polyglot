@@ -11,6 +11,9 @@
 ## Languages
 
 - [Go](https://github.com/mhd53/polyglot/tree/master/go)
+- [C](c)
+- [C++](c%2B%2B)
+- [Rust](rust)
 
 ## Valuable Quotes
 
