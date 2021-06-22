@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeLite_Workspace Name="copy_move">
+	<Project Name="copy_move" Path="copy_move.project" Active="No"/>
+	<BuildMatrix>
+		<WorkspaceConfiguration Name="Debug" Selected="yes">
+			<Project Name="copy_move" ConfigName="Debug"/>
+		</WorkspaceConfiguration>
+	</BuildMatrix>
+</CodeLite_Workspace>
