@@ -29,6 +29,8 @@
 
 > In the fields in which I don't have to be an expert, I strongly prefer to be an average user. In that way, I minimize hassles. - Bjarne Stroustrup (TC++PL [4e])
 
+> In general: try not to reinvent the wheel. - Bjarne Stroustrup (TC++PL [4e])
+
 ## Author
 
 👤 **Moe**
