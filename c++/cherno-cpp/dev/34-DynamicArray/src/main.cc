@@ -63,9 +63,8 @@ template class DynamicArr<Vector3>;
 
 template <typename T> void print_vect(const DynamicArr<T> darr)
 {
-    int N = darr.Size();
-    for (int i = 0; i < N; i++)
-        std::cout << darr[i] << " ";
+    for (T item : darr)
+        std::cout << item << " ";
     std::cout << "\n";
 }
 

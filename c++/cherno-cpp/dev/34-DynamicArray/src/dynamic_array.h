@@ -1,10 +1,67 @@
 #pragma once
 #include <cstdio>
+#include <iterator>
 #include <utility>
+#include <vector>
+
+template <typename Vector> class VectorIterator {
+public:
+    using value_type = typename Vector::value_type;
+    using pointer_type = value_type*;
+    using reference_type = value_type&;
+
+public:
+    VectorIterator(pointer_type ptr)
+        : ptr(ptr)
+    {
+    }
+
+    VectorIterator& operator++()
+    {
+        ptr++;
+        return *this;
+    }
+
+    VectorIterator operator++(int)
+    {
+        VectorIterator iterator = *this;
+        ++(*this);
+        return iterator;
+    }
+
+    VectorIterator& operator--()
+    {
+        ptr--;
+        return *this;
+    }
+
+    VectorIterator operator--(int)
+    {
+        VectorIterator iterator = *this;
+        --(*this);
+        return iterator;
+    }
+
+    reference_type operator[](int index) { return *(ptr + index); }
+
+    pointer_type operator->() { return ptr; }
+
+    reference_type operator*() { return *ptr; }
+
+    bool operator==(const VectorIterator& other) const { return ptr == other.ptr; }
+    bool operator!=(const VectorIterator& other) const { return !(*this == other); }
+
+private:
+    pointer_type ptr;
+};
 
 // FIXME: Double free error!
 
 template <typename T> class DynamicArr {
+public:
+    using value_type = T;
+    using iterator = VectorIterator<DynamicArr<T>>;
+
 public:
     DynamicArr()
         : DynamicArr(2)
@@ -64,6 +121,12 @@ public:
     T& operator[](size_t index) { return arr[index]; }
 
     size_t Size() const { return size; }
+
+    iterator begin() { return iterator(arr); }
+    iterator end() { return iterator(arr + size); }
+
+    const iterator begin() const { return iterator(arr); }
+    const iterator end() const { return iterator(arr + size); }
 
     ~DynamicArr()
     {
