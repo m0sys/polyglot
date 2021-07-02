@@ -31,6 +31,8 @@
 
 > In general: try not to reinvent the wheel. - Bjarne Stroustrup (TC++PL [4e])
 
+> There's a quote by me - guess one shouldn't quote one's self - but its a good quote. - Bjarne Stroustrup (CppCon 2015)
+
 ## Author
 
 👤 **Moe**
