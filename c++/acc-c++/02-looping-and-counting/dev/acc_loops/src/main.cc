@@ -18,7 +18,10 @@ int main()
     const string greeting = "Hello, " + name + "!";
 
     // Number of blanks surrounding greeting.
-    const int pad = 2;
+    int pad;
+
+    cout << "Please enter the amount of padding: ";
+    cin >> pad;
 
     // Number of rows and cols to write.
     const int rows = pad * 2 + 3;
