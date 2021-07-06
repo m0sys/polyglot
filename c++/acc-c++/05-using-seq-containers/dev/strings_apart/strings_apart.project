@@ -2,12 +2,14 @@
 <CodeLite_Project Name="strings_apart" InternalType="">
 	<VirtualDirectory Name="src">
 		<VirtualDirectory Name="src">
+			<File Name="src/frame.cc"/>
 			<File Name="src/main.cc"/>
 			<File Name="src/strings.cc"/>
 		</VirtualDirectory>
 	</VirtualDirectory>
 	<VirtualDirectory Name="include">
 		<VirtualDirectory Name="src">
+			<File Name="src/frame.h"/>
 			<File Name="src/strings.h"/>
 		</VirtualDirectory>
 	</VirtualDirectory>
