@@ -20,34 +20,32 @@ using std::vector;
 
 int main()
 {
-    vector<Student_info> students;
-    Student_info record;
-    string::size_type max_name_len = 0;
+    vector<Student_info> did, didnt;
 
-    // Read and store all the students data.
-    // Invariants:
-    //  students contains all the students records read so far.
-    //  max_name_len contains the length of the longest name in students.
-    while (read(cin, record)) {
-        max_name_len = max(max_name_len, record.name.size());
-        students.push_back(record);
+    // Read the student records and partition them.
+    Student_info student;
+    while (read(cin, student)) {
+        if (did_all_hws(student))
+            did.push_back(student);
+        else
+            didnt.push_back(student);
     }
 
-    // Alphabetize the student records.
-    sort(students.begin(), students.end(), compare);
-
-    // Write the names and grades to stdin.
-    for (vector<Student_info>::size_type i = 0; i != students.size(); ++i) {
-        cout << students[i].name << string(max_name_len + 1 - students[i].name.size(), ' ');
-
-        // Compute and write the grade.
-        try {
-            double fin_grade = grade(students[i]);
-            streamsize prec = cout.precision();
-            cout << setprecision(3) << fin_grade << setprecision(prec);
-        } catch (domain_error& e) {
-            cout << e.what();
-        }
-        cout << "\n";
+    // Verify that the analysis is useful.
+    if (did.empty()) {
+        cout << "No student did all the homeworks"
+             << "\n";
+        return 1;
     }
+
+    if (didnt.empty()) {
+        cout << "Every student did all the homeworks"
+             << "\n";
+        return 1;
+    }
+
+    // Do Analyses.
+    write_analysis(cout, "median", median_analysis, did, didnt);
+    write_analysis(cout, "average", avg_analysis, did, didnt);
+    write_analysis(cout, "median of homeworks turned in", optimistic_median_analysis, did, didnt);
 }
