@@ -34,10 +34,8 @@ double grade(double midterm, double fin_grade, const std::vector<double>& hws)
     return grade(midterm, fin_grade, median(hws));
 }
 
-double grade(const Student_info& s) { return grade(s.midterm, s.final, s.hws); }
-
 // Predicate to determine whether a student failed.
-bool fgrade(const Student_info& s) { return grade(s) < 60; }
+bool fgrade(const Student_info& s) { return s.grade() < 60; }
 
 // Time Complexity: O(N^2).
 vector<Student_info> extract_fails(vector<Student_info>& students)
@@ -97,12 +95,15 @@ vector<Student_info> extract_fails_algo_fast(vector<Student_info>& students)
 
 // 6.2.1 - Working with student records.
 
+// FIXME: incorporate functions into Student_info.
+
+/*
 bool did_all_hws(const Student_info& s) { return ((find(s.hws.begin(), s.hws.end(), 0)) == s.hws.end()); }
 
 double median_grade(const Student_info& s)
 {
     try {
-        return grade(s);
+        return s.grade();
     } catch (domain_error&) {
         return grade(s.midterm, s.final, 0);
     }
@@ -140,3 +141,4 @@ double avg_analysis(const vector<Student_info>& students) { return stats_analysi
 double optimistic_median_analysis(const vector<Student_info>& students) { return stats_analysis(students, optimistic_median_grade); }
 
 void write_analysis(ostream& out, const string& name, double analysis(const vector<Student_info>&), const vector<Student_info>& did, const vector<Student_info>& didnt) { out << name << ": median(did) = " << analysis(did) << ", median(didnt) = " << analysis(didnt) << "\n"; }
+*/

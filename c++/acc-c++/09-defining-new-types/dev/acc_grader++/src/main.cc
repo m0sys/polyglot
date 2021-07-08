@@ -1,4 +1,3 @@
-#include "grade.h"
 #include "student_info.h"
 #include <algorithm>
 #include <iomanip>
@@ -20,32 +19,29 @@ using std::vector;
 
 int main()
 {
-    vector<Student_info> did, didnt;
+    // Read student records.
+    vector<Student_info> students;
+    Student_info record;
+    string::size_type max_name_len = 0;
 
-    // Read the student records and partition them.
-    Student_info student;
-    while (read(cin, student)) {
-        if (did_all_hws(student))
-            did.push_back(student);
-        else
-            didnt.push_back(student);
+    while (record.read(cin)) {
+        max_name_len = max(max_name_len, record.name().size());
+        students.push_back(record);
     }
 
-    // Verify that the analysis is useful.
-    if (did.empty()) {
-        cout << "No student did all the homeworks"
-             << "\n";
-        return 1;
-    }
+    // Sort records alphabetically by name.
+    sort(students.begin(), students.end(), compare);
 
-    if (didnt.empty()) {
-        cout << "Every student did all the homeworks"
-             << "\n";
-        return 1;
-    }
+    // Write the names and grades.
+    for (vector<Student_info>::size_type i = 0; i != students.size(); ++i) {
+        cout << students[i].name() << string(max_name_len + 1 - students[1].name().size(), ' ');
 
-    // Do Analyses.
-    write_analysis(cout, "median", median_analysis, did, didnt);
-    write_analysis(cout, "average", avg_analysis, did, didnt);
-    write_analysis(cout, "median of homeworks turned in", optimistic_median_analysis, did, didnt);
+        try {
+            double final_grade = students[i].grade();
+            streamsize prec = cout.precision();
+            cout << setprecision(3) << final_grade << setprecision(prec) << "\n";
+        } catch (domain_error& err) {
+            cout << err.what() << "\n";
+        }
+    }
 }

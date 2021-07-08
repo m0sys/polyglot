@@ -5,8 +5,26 @@
 #include <string>
 #include <vector>
 
-struct Student_info {
-    std::string name;
+class Student_info {
+public:
+    Student_info()
+        : midterm { 0 }
+        , final { 0 }
+    {
+    }
+
+    Student_info(std::istream& is) { read(is); }
+
+    double grade() const;
+    std::istream& read(std::istream&);
+    std::string name() const { return n; }
+    bool valid() const { return !hws.empty(); }
+
+private:
+    static std::istream& read_hws(std::istream& in, std::vector<double>& hws);
+
+private:
+    std::string n;
     double midterm, final;
     std::vector<double> hws;
 };

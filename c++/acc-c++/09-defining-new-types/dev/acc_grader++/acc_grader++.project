@@ -2,6 +2,7 @@
 <CodeLite_Project Name="acc_grader++" InternalType="">
 	<VirtualDirectory Name="src">
 		<VirtualDirectory Name="src">
+			<File Name="src/average.cc"/>
 			<File Name="src/grade.cc"/>
 			<File Name="src/main.cc"/>
 			<File Name="src/median.cc"/>
@@ -10,6 +11,7 @@
 	</VirtualDirectory>
 	<VirtualDirectory Name="include">
 		<VirtualDirectory Name="src">
+			<File Name="src/average.h"/>
 			<File Name="src/grade.h"/>
 			<File Name="src/median.h"/>
 			<File Name="src/student_info.h"/>
