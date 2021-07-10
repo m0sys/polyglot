@@ -3,7 +3,7 @@
 #include "grade.h"
 #include "average.h"
 #include "median.h"
-#include "student_info.h"
+#include "students/core.h"
 #include <algorithm>
 #include <iostream>
 #include <list>
@@ -35,13 +35,13 @@ double grade(double midterm, double fin_grade, const std::vector<double>& hws)
 }
 
 // Predicate to determine whether a student failed.
-bool fgrade(const Student_info& s) { return s.grade() < 60; }
+bool fgrade(const Core& s) { return s.grade() < 60; }
 
 // Time Complexity: O(N^2).
-vector<Student_info> extract_fails(vector<Student_info>& students)
+vector<Core> extract_fails(vector<Core>& students)
 {
-    vector<Student_info> fails;
-    vector<Student_info>::iterator iter = students.begin();
+    vector<Core> fails;
+    vector<Core>::iterator iter = students.begin();
 
     // Invariant: elems [0, i) of students represent passing grades.
     while (iter != students.end()) {
@@ -55,10 +55,10 @@ vector<Student_info> extract_fails(vector<Student_info>& students)
 }
 
 // Time Complexity: O(N).
-list<Student_info> extract_fails_fast(list<Student_info>& students)
+list<Core> extract_fails_fast(list<Core>& students)
 {
-    list<Student_info> fails;
-    list<Student_info>::iterator iter = students.begin();
+    list<Core> fails;
+    list<Core>::iterator iter = students.begin();
 
     // Invariant: elems [0, i) of students represent passing grades.
     while (iter != students.end()) {
@@ -74,33 +74,33 @@ list<Student_info> extract_fails_fast(list<Student_info>& students)
 // 6.3 - using algorithm to extract fails.
 
 // Predicate to determine whether a student passed.
-bool pgrade(const Student_info& s) { return !fgrade(s); }
+bool pgrade(const Core& s) { return !fgrade(s); }
 
-vector<Student_info> extract_fails_algo(vector<Student_info>& students)
+vector<Core> extract_fails_algo(vector<Core>& students)
 {
-    vector<Student_info> fails;
+    vector<Core> fails;
     remove_copy_if(students.begin(), students.end(), back_inserter(fails), pgrade);
 
     students.erase(remove_if(students.begin(), students.end(), fgrade), students.end());
     return fails;
 }
 
-vector<Student_info> extract_fails_algo_fast(vector<Student_info>& students)
+vector<Core> extract_fails_algo_fast(vector<Core>& students)
 {
-    vector<Student_info>::iterator iter = std::stable_partition(students.begin(), students.end(), pgrade);
-    vector<Student_info> fails(iter, students.end());
+    vector<Core>::iterator iter = std::stable_partition(students.begin(), students.end(), pgrade);
+    vector<Core> fails(iter, students.end());
     students.erase(iter, students.end());
     return fails;
 }
 
 // 6.2.1 - Working with student records.
 
-// FIXME: incorporate functions into Student_info.
+// FIXME: incorporate functions into Core.
 
 /*
-bool did_all_hws(const Student_info& s) { return ((find(s.hws.begin(), s.hws.end(), 0)) == s.hws.end()); }
+bool did_all_hws(const Core& s) { return ((find(s.hws.begin(), s.hws.end(), 0)) == s.hws.end()); }
 
-double median_grade(const Student_info& s)
+double median_grade(const Core& s)
 {
     try {
         return s.grade();
@@ -109,10 +109,10 @@ double median_grade(const Student_info& s)
     }
 }
 
-double avg_grade(const Student_info& s) { return grade(s.midterm, s.final, average(s.hws)); }
+double avg_grade(const Core& s) { return grade(s.midterm, s.final, average(s.hws)); }
 
 // Median of the nonzero elements of s.hws, or 0 if no such elem exist.
-double optimistic_median_grade(const Student_info& s)
+double optimistic_median_grade(const Core& s)
 {
     vector<double> nonzero;
 
@@ -125,7 +125,7 @@ double optimistic_median_grade(const Student_info& s)
 }
 
 // Higher order function for doing statistical analysis on student grades.
-double stats_analysis(const vector<Student_info>& students, double grade_func(const Student_info&))
+double stats_analysis(const vector<Core>& students, double grade_func(const Core&))
 {
 
     vector<double> grades;
@@ -134,11 +134,11 @@ double stats_analysis(const vector<Student_info>& students, double grade_func(co
     return median(grades);
 }
 
-double median_analysis(const vector<Student_info>& students) { return stats_analysis(students, median_grade); }
+double median_analysis(const vector<Core>& students) { return stats_analysis(students, median_grade); }
 
-double avg_analysis(const vector<Student_info>& students) { return stats_analysis(students, avg_grade); }
+double avg_analysis(const vector<Core>& students) { return stats_analysis(students, avg_grade); }
 
-double optimistic_median_analysis(const vector<Student_info>& students) { return stats_analysis(students, optimistic_median_grade); }
+double optimistic_median_analysis(const vector<Core>& students) { return stats_analysis(students, optimistic_median_grade); }
 
-void write_analysis(ostream& out, const string& name, double analysis(const vector<Student_info>&), const vector<Student_info>& did, const vector<Student_info>& didnt) { out << name << ": median(did) = " << analysis(did) << ", median(didnt) = " << analysis(didnt) << "\n"; }
+void write_analysis(ostream& out, const string& name, double analysis(const vector<Core>&), const vector<Core>& did, const vector<Core>& didnt) { out << name << ": median(did) = " << analysis(did) << ", median(didnt) = " << analysis(didnt) << "\n"; }
 */

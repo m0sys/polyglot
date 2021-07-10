@@ -6,7 +6,6 @@
 			<File Name="src/grade.cc"/>
 			<File Name="src/main.cc"/>
 			<File Name="src/median.cc"/>
-			<File Name="src/student_info.cc"/>
 		</VirtualDirectory>
 	</VirtualDirectory>
 	<VirtualDirectory Name="include">
@@ -14,7 +13,6 @@
 			<File Name="src/average.h"/>
 			<File Name="src/grade.h"/>
 			<File Name="src/median.h"/>
-			<File Name="src/student_info.h"/>
 		</VirtualDirectory>
 	</VirtualDirectory>
 	<Settings Type="Executable">
