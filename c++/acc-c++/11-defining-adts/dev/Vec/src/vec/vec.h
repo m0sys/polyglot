@@ -30,8 +30,8 @@ public:
     iterator begin() { return data; }
     const_iterator begin() const { return data; }
 
-    iterator end() { return limit; }
-    const_iterator end() const { return limit; }
+    iterator end() { return avail; }
+    const_iterator end() const { return avail; }
 
     void push_back(const T& val)
     {
@@ -100,10 +100,10 @@ template <typename T> void Vec<T>::uncreate()
 
 template <typename T> void Vec<T>::grow()
 {
-    size_type new_size = max(2 * (limit - data), ptrdiff_t(1));
+    size_type new_size = std::max(2 * (limit - data), ptrdiff_t(1));
 
     iterator new_data = alloc.allocate(new_size);
-    iterator new_avail = uninitialized_copy(data, avail, new_data);
+    iterator new_avail = std::uninitialized_copy(data, avail, new_data);
 
     uncreate();
 
