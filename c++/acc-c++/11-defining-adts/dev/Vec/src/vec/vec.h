@@ -1,6 +1,7 @@
 #pragma once
 #include <cstddef>
 #include <memory>
+#include <utility>
 
 template <typename T> class Vec {
     // Class Invariants:
@@ -41,6 +42,10 @@ public:
         unchecked_append(val);
     }
 
+    iterator erase(const_iterator position);
+    iterator erase(const_iterator first, const_iterator last);
+    void clear();
+
 private:
     // Allocate and init the underlying array.
     void create();
@@ -49,6 +54,8 @@ private:
 
     // Destroy the elems in the array and free the memory.
     void uncreate();
+    iterator uncreate(const_iterator pos);
+    iterator uncreate(const_iterator first, const_iterator last);
 
     // Support functions for push_back.
     void grow();
@@ -71,6 +78,12 @@ template <typename T> Vec<T>& Vec<T>::operator=(const Vec& rhs)
     }
     return *this;
 }
+
+template <typename T> typename Vec<T>::iterator Vec<T>::erase(const_iterator position) { return uncreate(position); }
+
+template <typename T> typename Vec<T>::iterator Vec<T>::erase(const_iterator first, const_iterator last) { return uncreate(first, last); }
+
+template <typename T> void Vec<T>::clear() { uncreate(); }
 
 template <typename T> void Vec<T>::create() { data = avail = limit = 0; }
 
@@ -96,6 +109,74 @@ template <typename T> void Vec<T>::uncreate()
         alloc.deallocate(data, limit - data);
     }
     data = limit = avail = 0;
+}
+
+template <typename T> typename Vec<T>::iterator Vec<T>::uncreate(const_iterator pos)
+{
+    if (data) {
+        iterator found;
+        iterator cur = begin();
+
+        while (cur != end() && cur != pos)
+            cur++;
+        found = cur;
+        if (cur == avail)
+            // NOTE: probably better to return an error code.
+            throw std::domain_error("Position not found!\n");
+
+        while (cur != avail - 1) {
+            alloc.construct(cur, *(cur + 1));
+            cur++;
+        }
+        avail--;
+        return found++;
+
+    } else {
+        throw std::logic_error("Cannot erase element from empty Vec!\n");
+    }
+}
+
+template <typename T> typename Vec<T>::iterator Vec<T>::uncreate(const_iterator first, const_iterator last)
+{
+    if (data) {
+        iterator ffirst;
+        iterator flast;
+        iterator cur = begin();
+
+        // Find first.
+        while (cur != end() && cur != first)
+            cur++;
+        ffirst = cur;
+        if (cur == avail)
+            throw std::domain_error("First not found!\n");
+
+        // Find last.
+        while (cur != end() && cur != last)
+            cur++;
+        flast = cur;
+        if (cur == avail)
+            throw std::domain_error("Last not found!\n");
+
+        // Destroy elems in range of [first, last).
+        cur = ffirst;
+        while (cur != flast)
+            alloc.destroy(cur++);
+
+        // Shift elements into sequence.
+        cur = ffirst;
+        iterator cur_end = flast;
+        while (cur_end != avail) {
+            alloc.construct(cur, *cur_end);
+            cur++;
+            cur_end++;
+        }
+
+        avail -= (last - first);
+        return ffirst;
+
+    } else {
+        throw std::logic_error("Cannot erase elements from empty Vec!\n");
+    }
 }
 
 template <typename T> void Vec<T>::grow()
