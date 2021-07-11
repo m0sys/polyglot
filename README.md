@@ -33,6 +33,8 @@
 
 > There's a quote by me - guess one shouldn't quote one's self - but its a good quote. - Bjarne Stroustrup (CppCon 2015)
 
+> The reasonable man adapts himself to the world; the unreasonable one persists in trying to adapt the world to himself. Therefore all progress depends on the unreasonable man. - George Bernard Shaw
+
 ## Author
 
 👤 **Moe**
