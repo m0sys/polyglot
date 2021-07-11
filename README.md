@@ -35,6 +35,8 @@
 
 > The reasonable man adapts himself to the world; the unreasonable one persists in trying to adapt the world to himself. Therefore all progress depends on the unreasonable man. - George Bernard Shaw
 
+> Counting on your fingers is not going to cut it if you want to fly to the moon. - Bjarne Stroustrup  (Lex Pod 2019)
+
 ## Author
 
 👤 **Moe**
