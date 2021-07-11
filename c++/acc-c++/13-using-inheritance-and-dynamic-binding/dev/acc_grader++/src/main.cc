@@ -1,4 +1,4 @@
-#include "students/core.h"
+#include "students/student_info.h"
 #include <algorithm>
 #include <iomanip>
 #include <ios>
@@ -20,8 +20,8 @@ using std::vector;
 int main()
 {
     // Read student records.
-    vector<Core> students;
-    Core record;
+    vector<Student_info> students;
+    Student_info record;
     string::size_type max_name_len = 0;
 
     while (record.read(cin)) {
@@ -30,10 +30,10 @@ int main()
     }
 
     // Sort records alphabetically by name.
-    sort(students.begin(), students.end(), compare);
+    sort(students.begin(), students.end(), Student_info::compare);
 
     // Write the names and grades.
-    for (vector<Core>::size_type i = 0; i != students.size(); ++i) {
+    for (vector<Student_info>::size_type i = 0; i != students.size(); ++i) {
         cout << students[i].name() << string(max_name_len + 1 - students[1].name().size(), ' ');
 
         try {

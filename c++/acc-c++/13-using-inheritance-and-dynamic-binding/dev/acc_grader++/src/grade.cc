@@ -3,7 +3,6 @@
 #include "grade.h"
 #include "average.h"
 #include "median.h"
-#include "students/core.h"
 #include <algorithm>
 #include <iostream>
 #include <list>
@@ -34,6 +33,7 @@ double grade(double midterm, double fin_grade, const std::vector<double>& hws)
     return grade(midterm, fin_grade, median(hws));
 }
 
+/*
 // Predicate to determine whether a student failed.
 bool fgrade(const Core& s) { return s.grade() < 60; }
 
@@ -93,6 +93,7 @@ vector<Core> extract_fails_algo_fast(vector<Core>& students)
     return fails;
 }
 
+*/
 // 6.2.1 - Working with student records.
 
 // FIXME: incorporate functions into Core.
