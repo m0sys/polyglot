@@ -37,6 +37,10 @@
 
 > Counting on your fingers is not going to cut it if you want to fly to the moon. - Bjarne Stroustrup  (Lex Pod 2019)
 
+> People who are really serious about software should make their own hardware. - Alan Kay
+
+> Object-oriented programming is an exceptionally bad idea which could only have originated in California. - Edsger Dijkstra
+
 ## Author
 
 👤 **Moe**
