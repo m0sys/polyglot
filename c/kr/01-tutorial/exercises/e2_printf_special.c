@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// Exercise 1.2
 int main()
 {
     //
