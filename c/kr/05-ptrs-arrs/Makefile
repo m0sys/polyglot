@@ -1,3 +1,12 @@
+run_tail: e13_tail.c
+	gcc e13_tail.c -o tail
+
+run_rev_polish_cmd: e10_rev_polish_cmd.c
+	gcc e10_rev_polish_cmd.c -o expr
+
+run_y2k: e9_conv_years.c
+	gcc e9_conv_years.c -o y2k
+
 run_strn: e5_strn.c
 	gcc e5_strn.c -o strn
 
@@ -20,3 +29,7 @@ clean:
 	rm -f strcat
 	rm -f strend
 	rm -f strn
+	rm -f y2k
+	rm -f expr
+	rm -f tail
+
