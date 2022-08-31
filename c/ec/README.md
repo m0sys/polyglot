@@ -10,3 +10,7 @@
     - [X] 5.1
     - [X] 5.2
     - [X] 5.3
+- [ ] 06-Dynamically Allocated Memory
+    - [X] 6.1
+    - [ ] 6.2
+
