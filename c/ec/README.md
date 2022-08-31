@@ -6,3 +6,7 @@
 - [X] 02-Objects, Functions, and Types
     - [X] 2.1
     - [X] 2.2
+- [X] 05-Control Flow
+    - [X] 5.1
+    - [X] 5.2
+    - [X] 5.3
