@@ -5,7 +5,6 @@
   </a>
 </p>
 
-
 > The road to becoming a serious polyglot programmer.
 
 ## Languages
@@ -25,7 +24,7 @@
 
 > A professional software developer masters more than just one programming language. - Bjarne Stroustrup (The C++ Programming Language [4th Edition])
 
-> To write a good program takes intelligence, taste, and patience. You are not going to get it right the first time. Experiment!  - Bjarne Stroustrup (The C++ Programming Language [4th Edition])
+> To write a good program takes intelligence, taste, and patience. You are not going to get it right the first time. Experiment! - Bjarne Stroustrup (The C++ Programming Language [4th Edition])
 
 > In the fields in which I don't have to be an expert, I strongly prefer to be an average user. In that way, I minimize hassles. - Bjarne Stroustrup (TC++PL [4e])
 
@@ -35,7 +34,7 @@
 
 > The reasonable man adapts himself to the world; the unreasonable one persists in trying to adapt the world to himself. Therefore all progress depends on the unreasonable man. - George Bernard Shaw
 
-> Counting on your fingers is not going to cut it if you want to fly to the moon. - Bjarne Stroustrup  (Lex Pod 2019)
+> Counting on your fingers is not going to cut it if you want to fly to the moon. - Bjarne Stroustrup (Lex Pod 2019)
 
 > People who are really serious about software should make their own hardware. - Alan Kay
 
@@ -43,9 +42,9 @@
 
 ## Author
 
-👤 **Moe**
+👤 **M0**
 
-* Github: [@mhd53](https://github.com/mhd53)
+- Github: [@m0sys](https://github.com/m0sys)
 
 ## Show your support
 
@@ -53,7 +52,7 @@ Give a ⭐️ if this project helped you!
 
 ## 📝 License
 
-Copyright © 2021 [moe](https://github.com/mhd53).<br />
+Copyright © 2021 [M0](https://github.com/m0sys).<br />
 This project is [MIT](https://opensource.org/licenses/MIT) licensed.
 
-***
+---
